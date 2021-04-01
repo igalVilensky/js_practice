@@ -82,3 +82,50 @@ function icyHot(temp1, temp2) {
 console.log(icyHot(120, -1));
 console.log(icyHot(-1, 120));
 console.log(icyHot(2, 120));
+
+/* Given 2 int values, return true if either of them is in the range 10..20 inclusive.
+
+Examples
+
+in1020(12, 99) → true
+in1020(21, 12) → true
+in1020(8, 99) → false */
+
+function in1020(a, b) {
+  let result;
+  if ((a <= 20 && a >= 10) || (b <= 20 && b >= 10)) {
+    result = true;
+  } else {
+    result = false;
+  }
+
+  return result;
+}
+
+console.log(in1020(12, 99));
+console.log(in1020(21, 12));
+console.log(in1020(8, 99));
+
+/* We'll say that a number is 'teen' if it is in the range 13..19 inclusive. Given 3 int values, return true if 1 or more of them are teen.
+
+Examples
+
+hasTeen(13, 20, 10) → true
+hasTeen(20, 19, 10) → true
+hasTeen(20, 10, 13) → true */
+
+function hasTeen(a, b, c) {
+  let result;
+  if ((a >= 13 && a <= 19) || (b >= 13 && b <= 19) || (c >= 13 && c <= 19)) {
+    result = true;
+  } else {
+    result = false;
+  }
+  return result;
+}
+
+console.log("----------------------");
+console.log(hasTeen(13, 20, 10));
+
+console.log(hasTeen(20, 10, 13));
+console.log(hasTeen(20, 12, 10));
