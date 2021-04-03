@@ -129,3 +129,32 @@ console.log(hasTeen(13, 20, 10));
 
 console.log(hasTeen(20, 10, 13));
 console.log(hasTeen(20, 12, 10));
+
+// We'll say that a number is 'teen' if it is in the range 13..19 inclusive. Given 2 int values, return true if one or the other is teen, but not both.
+
+// Examples
+
+// loneTeen(13, 99) → true
+// loneTeen(21, 19) → true
+// loneTeen(13, 13) → false
+
+function loneTeen(a, b) {
+  let result;
+
+  if ((a >= 13 && a <= 19) || (b >= 13 && b <= 19)) {
+    result = true;
+
+    if (a >= 13 && a <= 19 && b >= 13 && b <= 19) {
+      result = false;
+    }
+  } else if (a === b) {
+    result = false;
+  }
+  return result;
+}
+
+console.log("----------------------");
+console.log(loneTeen(13, 99));
+console.log(loneTeen(21, 19));
+console.log(loneTeen(13, 13));
+console.log(loneTeen(99, 99));
