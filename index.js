@@ -158,3 +158,24 @@ console.log(loneTeen(13, 99));
 console.log(loneTeen(21, 19));
 console.log(loneTeen(13, 13));
 console.log(loneTeen(99, 99));
+
+// Given a string, if the string "del" appears starting at index 1, return a string where that "del" has been deleted. Otherwise, return the string unchanged.
+
+// Examples
+
+// delDel('adelbc') → abc
+// delDel('adelHello') → aHello
+// delDel('abcdel') → abcdel
+
+function delDel(str) {
+  if (str.startsWith("del", 1)) {
+    return str.charAt(0) + str.substring(4);
+  } else {
+    return str;
+  }
+}
+
+console.log("----------------------");
+console.log(delDel("adelbc"));
+console.log(delDel("adelHello"));
+console.log(delDel("abcdel"));
