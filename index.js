@@ -227,3 +227,40 @@ console.log(startOz("abc"));
 console.log(startOz("ozymandias"));
 console.log(startOz("bzoo"));
 console.log(startOz("oxx"));
+
+// Given three int values, a b c, return the largest.
+
+// Examples
+
+// intMax(1, 2, 3) → 3
+// intMax(1, 3, 2) → 3
+// intMax(3, 2, 1) → 3
+
+function intMax(a, b, c) {
+  let result;
+
+  if (a > c) {
+    result = a;
+    if (a < b) {
+      result = b;
+    }
+  } else if (b > c) {
+    result = b;
+  } else {
+    result = c;
+  }
+
+  return result;
+}
+
+console.log("------------------");
+console.log(intMax(1, 2, 3));
+console.log(intMax(1, 3, 2));
+console.log(intMax(3, 2, 1));
+console.log(intMax(5, 6, 2));
+
+/* Step 3 : If a > b go to step 4 Otherwise go to step 5
+
+Step 4. If a > c SET largestValue = a Otherwise largestValue = c
+
+Step 5 : If b > c SET largestValue = b Otherwise largestValue = c */
