@@ -179,3 +179,51 @@ console.log("----------------------");
 console.log(delDel("adelbc"));
 console.log(delDel("adelHello"));
 console.log(delDel("abcdel"));
+
+// Return true if the given string begins with 'mix', except the 'm' can be anything, so 'pix', '9ix' .. all count.
+
+// Examples
+
+// mixStart('mix snacks') → true
+// mixStart('pix snacks') → true
+// mixStart('piz snacks') → false
+
+function mixStart(str) {
+  if (str.startsWith("ix", 1)) {
+    return true;
+  }
+  return false;
+}
+
+console.log("----------------------");
+console.log(mixStart("mix snacks"));
+console.log(mixStart("pix snacks"));
+console.log(mixStart("piz snacks"));
+
+// Given a string, return a string made of the first 2 chars (if present),
+
+// however include first char only if it is 'o' and include the second only if it is 'z', so 'ozymandias' yields 'oz'.
+
+// Examples
+
+// startOz('ozymandias') → oz
+// startOz('bzoo') → z
+// startOz('oxx') → o
+
+function startOz(str) {
+  if (str.startsWith("oz", 0)) {
+    return "oz";
+  } else if (str.charAt(0) == "o" && str.charAt(1) !== "z") {
+    return "o";
+  } else if (str.charAt(0) !== "o" && str.charAt(1) == "z") {
+    return "z";
+  } else if (str.charAt(0) !== "o" && str.charAt(1) !== "z") {
+    return "";
+  }
+}
+
+console.log("----------------------");
+console.log(startOz("abc"));
+console.log(startOz("ozymandias"));
+console.log(startOz("bzoo"));
+console.log(startOz("oxx"));
