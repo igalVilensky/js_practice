@@ -259,8 +259,33 @@ console.log(intMax(1, 3, 2));
 console.log(intMax(3, 2, 1));
 console.log(intMax(5, 6, 2));
 
-/* Step 3 : If a > b go to step 4 Otherwise go to step 5
+// Given 2 int values, return whichever value is nearest to the value 10, or return 0 in the event of a tie.
 
-Step 4. If a > c SET largestValue = a Otherwise largestValue = c
+// Note that Math.abs(n) returns the absolute value of a number.
 
-Step 5 : If b > c SET largestValue = b Otherwise largestValue = c */
+// Examples
+
+// close10(8, 13) → 8
+// close10(13, 8) → 8
+// close10(13, 7) → 0
+
+function close10(a, b) {
+  let result;
+  let num1 = Math.abs(10 - a);
+  let num2 = Math.abs(10 - b);
+
+  if (num1 < num2) {
+    result = a;
+  } else if (num1 == num2) {
+    result = 0;
+  } else {
+    result = b;
+  }
+
+  return result;
+}
+
+console.log("------------------");
+console.log(close10(8, 13));
+console.log(close10(13, 8));
+console.log(close10(13, 7));
