@@ -289,3 +289,54 @@ console.log("------------------");
 console.log(close10(8, 13));
 console.log(close10(13, 8));
 console.log(close10(13, 7));
+
+// Given 2 int values, return true if they are both in the range 30..40 inclusive, or they are both in the range 40..50 inclusive.
+
+// Examples
+
+// in3050(30, 31) → true
+// in3050(30, 41) → false
+// in3050(40, 50) → true
+
+function in3050(a, b) {
+  let result;
+  if (a >= 30 && a <= 40 && b >= 30 && b <= 40) {
+    result = true;
+  } else if (a >= 40 && a <= 50 && b >= 40 && b <= 50) {
+    result = true;
+  } else {
+    result = false;
+  }
+  return result;
+}
+
+console.log("------------------");
+console.log(in3050(30, 31));
+console.log(in3050(30, 41));
+console.log(in3050(40, 50));
+
+// Given 2 positive int values, return the larger value that is in the range 10..20 inclusive, or return 0 if neither is in that range.
+
+// Examples
+
+// max1020(11, 19) → 19
+// max1020(19, 11) → 19
+// max1020(11, 9) → 11
+
+function max1020(a, b) {
+  if (a >= 10 && a <= 20) {
+    if (a >= b || b > 20) {
+      return a;
+    }
+  }
+  if (b >= 10 && b <= 20) {
+    return b;
+  }
+  return 0;
+}
+
+console.log("------------------");
+console.log(max1020(11, 19));
+console.log(max1020(19, 11));
+console.log(max1020(11, 9));
+console.log(max1020(21, 8));
