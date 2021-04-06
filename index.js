@@ -370,3 +370,36 @@ console.log("------------------");
 console.log(stringE("Hello"));
 console.log(stringE("Heelle"));
 console.log(stringE("Heelele"));
+
+// Given two non-negative int values, return true if they have the same last digit,
+
+// such as with 27 and 57. Note that the % 'mod' operator computes remainders, so 17 % 10 is 7.
+
+// Examples
+
+// lastDigit(7, 17) → true
+// lastDigit(6, 17) → false
+// lastDigit(3, 113) → true
+
+function lastDigit(a, b) {
+  let result;
+  let numToStr1 = a.toString(10);
+  let numToStr2 = b.toString(10);
+  console.log(numToStr1, numToStr2);
+
+  if (a === b % 10) {
+    result = true;
+  } else if (b === a % 10) {
+    result = true;
+  } else {
+    result = false;
+  }
+
+  return result;
+}
+
+console.log("------------------");
+console.log(lastDigit(7, 17));
+console.log(lastDigit(6, 17));
+console.log(lastDigit(3, 113));
+console.log(lastDigit(114, 4));
