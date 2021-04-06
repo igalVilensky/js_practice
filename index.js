@@ -340,3 +340,33 @@ console.log(max1020(11, 19));
 console.log(max1020(19, 11));
 console.log(max1020(11, 9));
 console.log(max1020(21, 8));
+
+// Return true if the given string contains between 1 and 3 'e' chars.
+
+// Examples
+
+// stringE('Hello') → true
+// stringE('Heelle') → true
+// stringE('Heelele') → false
+
+function stringE(str) {
+  let result;
+  let strToArr = str.split("");
+  let counter = 0;
+  for (let i = 0; i < strToArr.length; i++) {
+    if (strToArr[i] == "e") {
+      counter += 1;
+    }
+  }
+  if (counter >= 1 && counter <= 3) {
+    result = true;
+  } else {
+    result = false;
+  }
+  return result;
+}
+
+console.log("------------------");
+console.log(stringE("Hello"));
+console.log(stringE("Heelle"));
+console.log(stringE("Heelele"));
