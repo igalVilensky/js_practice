@@ -403,3 +403,47 @@ console.log(lastDigit(7, 17));
 console.log(lastDigit(6, 17));
 console.log(lastDigit(3, 113));
 console.log(lastDigit(114, 4));
+
+// Given a string, return a new string where the last 3 chars are now in upper case. If the string has less than 3 chars, uppercase whatever is there.
+
+// Note that str.toUpperCase() returns the uppercase version of a string.
+
+// Examples
+
+// endUp('Hello') → HeLLO
+// endUp('hi there') → hi thERE
+// endUp('hi') → HI
+
+function endUp(str) {
+  let temp;
+  let result;
+  let scahr = str.substring(0, str.length - 3);
+  temp = str.substring(str.length - 3);
+  result = scahr + temp.toUpperCase();
+  if (str.length < 3) {
+    result = str.toUpperCase();
+  }
+  return result;
+}
+
+console.log("------------------");
+console.log(endUp("Hello"));
+console.log(endUp("hi there"));
+console.log(endUp("hi"));
+
+// Given a non-empty string and an int N, return the string made starting with char 0, and then every Nth char of the string.
+
+// So if N is 3, use char 0, 3, 6, ... and so on. N is 1 or more.
+
+// Examples
+
+// everyNth('Miracle', 2) → Mrce
+// everyNth('abcdefg', 2) → aceg
+// everyNth('abcdefg', 3) → adg
+
+function everyNth(str, n) {}
+
+console.log("------------------");
+console.log(everyNth("Miracle", 2));
+console.log(everyNth("abcdefg", 2));
+console.log(everyNth("abcdefg", 3));
