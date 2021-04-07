@@ -441,9 +441,33 @@ console.log(endUp("hi"));
 // everyNth('abcdefg', 2) → aceg
 // everyNth('abcdefg', 3) → adg
 
-function everyNth(str, n) {}
+function everyNth(str, n) {
+  let temp;
+  let result;
+  let interval = n;
+  temp = str.split("").filter((char, index) => index % interval == 0);
+  result = temp.join("");
+  return result;
+}
 
 console.log("------------------");
 console.log(everyNth("Miracle", 2));
 console.log(everyNth("abcdefg", 2));
 console.log(everyNth("abcdefg", 3));
+
+// Given a string and a non-negative int n, return a larger string that is n copies of the original string.
+
+// Examples
+
+// stringTimes('Hi', 2) → HiHi
+// stringTimes('Hi', 3) → HiHiHi
+// stringTimes('Hi', 1) → Hi
+
+function stringTimes(str, n) {
+  return str.repeat(n);
+}
+
+console.log("------------------");
+console.log(stringTimes("Hi", 2));
+console.log(stringTimes("Hi", 3));
+console.log(stringTimes("Hi", 1));
