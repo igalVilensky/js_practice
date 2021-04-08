@@ -471,3 +471,62 @@ console.log("------------------");
 console.log(stringTimes("Hi", 2));
 console.log(stringTimes("Hi", 3));
 console.log(stringTimes("Hi", 1));
+
+// Given a string and a non-negative int n, we'll say that the front of the string is the first 3 chars,
+
+// or whatever is there if the string is less than length 3. Return n copies of the front.
+
+// Examples
+
+// frontTimes('Chocolate', 2) → ChoCho
+// frontTimes('Chocolate', 3) → ChoChoCho
+// frontTimes('Abc', 3) → AbcAbcAbc
+
+function frontTimes(str, n) {
+  let result;
+  if (str.length >= 3) {
+    result = str.substring(0, 3).repeat(n);
+  } else {
+    result = str.repeat(n);
+  }
+  return result;
+}
+
+console.log("------------------");
+console.log(frontTimes("Chocolate", 2));
+console.log(frontTimes("Chocolate", 3));
+console.log(frontTimes("Abc", 3));
+console.log(frontTimes("Ab", 4));
+console.log(frontTimes("A", 4));
+console.log(frontTimes("", 4));
+
+// Count the number of 'xx' in the given string. We'll say that overlapping is allowed, so 'xxx' contains 2 'xx'.
+
+// Examples
+
+// countXX('abcxx') → 1
+// countXX('xxx') → 2
+// countXX('xxxx') → 3
+
+function countXX(str) {
+  let result;
+  let counter = 0;
+  let strToArr = str.split("");
+
+  for (let i = 0; i < strToArr.length; i++) {
+    if (strToArr[i] === "x") {
+      counter++;
+      result = counter - 1;
+    } else if (strToArr[i] !== "x") {
+      result = 0;
+    }
+  }
+  return result;
+}
+
+console.log("------------------");
+console.log(countXX("abcxx"));
+console.log(countXX("xxx"));
+console.log(countXX("xxxx"));
+console.log(countXX("abc"));
+console.log(countXX("Hexxo Thxxe"));
