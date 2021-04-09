@@ -508,10 +508,26 @@ console.log(frontTimes("", 4));
 // countXX('xxx') → 2
 // countXX('xxxx') → 3
 
-function countXX(str) {
+/* function countXX(str) {
   let result;
   let counter = 0;
   let strToArr = str.split("");
+  let lcheck = str.split(" ");
+  let temp;
+  if (lcheck.length > 1) {
+    temp = lcheck.join("").split("");
+    console.log(temp);
+    for (let j = 0; j < temp.length; j++) {
+      if (temp[j] === "x") {
+        counter++;
+        console.log(counter);
+        result = counter - 1;
+      } else if (temp[j] !== "x") {
+        result = 0;
+        break;
+      }
+    }
+  }
 
   for (let i = 0; i < strToArr.length; i++) {
     if (strToArr[i] === "x") {
@@ -529,4 +545,78 @@ console.log(countXX("abcxx"));
 console.log(countXX("xxx"));
 console.log(countXX("xxxx"));
 console.log(countXX("abc"));
+console.log(countXX("Hexxo Thxxe")); */
+
+/* function countXX1(str) {
+  let result;
+  let result2;
+  let temp;
+  let counter = 1;
+  let counter2 = 1;
+  let strToArr = str.split("");
+
+  function removeWhiteSpaceFromArray(strToArr) {
+    strToArr = str.split("");
+
+    temp = strToArr.filter((item) => item != " ");
+    result2 = temp.filter((item) => item === "x");
+    counter = result2.length - 1;
+
+    return counter;
+  }
+  result = removeWhiteSpaceFromArray(str);
+  for (let i = 0; i < strToArr.length; i++) {
+    if (strToArr[i] === "x") {
+      counter++;
+    } else if (strToArr[i] !== "x") {
+      counter = 0;
+      result = 0;
+    }
+  }
+
+  return result;
+}
+
+console.log("------------------");
+console.log(countXX1("Hexxo Thxxe"));
+console.log(countXX1("abc"));
+console.log(countXX1("xxx")); */
+
+// Count the number of 'xx' in the given string. We'll say that overlapping is allowed, so 'xxx' contains 2 'xx'.
+
+// Examples
+
+// countXX('abcxx') → 1
+// countXX('xxx') → 2
+// countXX('xxxx') → 3
+
+function countXX(str) {
+  let temp = str.split(" ");
+  let result;
+  let strToArr = str.split("");
+  let counter = 0;
+  let temp2;
+
+  result = strToArr.filter((item) => item === "x");
+  counter = result.length - 1;
+  if (counter < 0) {
+    counter = 0;
+  } else if (temp.length > 1 && counter === 0) {
+    counter = 0;
+
+    temp2 = strToArr.filter((item) => item != " ");
+    result = temp2.filter((item) => item === "x");
+    counter = result.length - 1;
+  } else if (temp.length > 1 && counter > 0) {
+    console.log("hi");
+    counter = 1 * temp.length;
+  }
+
+  return counter;
+}
+
+console.log(countXX("abcxx"));
+console.log(countXX("xxx"));
 console.log(countXX("Hexxo Thxxe"));
+console.log(countXX("Hello There"));
+/* console.log(countXX("abc")); */
