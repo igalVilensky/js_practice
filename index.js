@@ -679,3 +679,41 @@ function stringSplosion(str) {
 
 console.log("------------------");
 console.log(stringSplosion("code"));
+
+/* Given a string, return the count of the number of times that a substring length 2 appears in the string and also as the last 2 chars of the string, 
+
+so "hixxxhi" yields 1 (we won't count the end substring).
+
+Examples
+
+last2('hixxhi') → 1
+last2('xaxxaxaxx') → 1
+last2('axxaaxx') → 1 */
+
+function last2(str) {
+  let counter;
+  if (str.length <= 2) {
+    counter = 0;
+  }
+  if (str.length === 0) {
+    return (counter = 0);
+  }
+  let lastTwoChars = str.substring(str.length - 2);
+  counter = 0;
+  for (let i = 0; i < str.length; i++) {
+    let sub = str.substring(i, i + 2);
+    if (sub === lastTwoChars) {
+      counter++;
+    }
+  }
+
+  return counter - 1;
+}
+
+console.log("------------------");
+console.log(last2("hixxhi"));
+console.log(last2("xaxxaxaxx"));
+console.log(last2("axxaaxx"));
+console.log(last2("ax"));
+console.log(last2("xxaxxaxxaxx"));
+console.log(last2(""));
