@@ -765,3 +765,22 @@ console.log("------------------");
 console.log(arrayFront9([1, 2, 9, 3, 4]));
 console.log(arrayFront9([1, 2, 3, 4, 9]));
 console.log(arrayFront9([1, 2, 3, 4, 5]));
+
+/* Given an array of ints, return true if the sequence of numbers 1, 2, 3 appears in the array somewhere. */
+
+function array123(nums) {
+  let result;
+  let numsToStr = nums.join("");
+  if (numsToStr.includes("123")) {
+    result = true;
+  } else {
+    result = false;
+  }
+
+  return result;
+}
+
+console.log("------------------");
+console.log(array123([1, 2, 3, 4, 5]));
+console.log(array123([1, 3, 3, 4, 5]));
+console.log(array123([1, 1, 2, 3, 5]));
