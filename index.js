@@ -717,3 +717,26 @@ console.log(last2("axxaaxx"));
 console.log(last2("ax"));
 console.log(last2("xxaxxaxxaxx"));
 console.log(last2(""));
+
+// Given an array of ints, return the number of 9's in the array.
+
+// Examples
+
+// arrayCount9([1,2,9]) → 1
+// arrayCount9([1,9,9]) → 2
+// arrayCount9([1,9,9,3,9]) → 3
+
+function arrayCount9(nums) {
+  let result;
+  if (nums.length === 0) return 0;
+  for (let i = 0; i < nums.length; i++) {
+    result = nums.filter((item) => item === 9);
+  }
+  return result.length;
+}
+
+console.log("------------------");
+console.log(arrayCount9([1, 2, 9]));
+console.log(arrayCount9([1, 9, 9]));
+console.log(arrayCount9([1, 9, 9, 3, 9]));
+console.log(arrayCount9([]));
