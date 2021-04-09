@@ -784,3 +784,45 @@ console.log("------------------");
 console.log(array123([1, 2, 3, 4, 5]));
 console.log(array123([1, 3, 3, 4, 5]));
 console.log(array123([1, 1, 2, 3, 5]));
+
+/* Given 2 strings, a and b, return the number of the positions where they contain the same length 2 substring. 
+
+So "xxcaazz" and "xxbaaz" yields 3, since the "xx" "xx", "aa", and "az" substrings appear in the same place in both strings.
+
+Examples
+
+stringMatch('xxcaazz', 'xxbaaz') → 3
+stringMatch('abc', 'abc') → 2
+stringMatch('abc', 'axc') → 0 */
+
+function stringMatch(a, b) {
+  let counter = 0;
+  let result;
+  let aToArr = a.split("");
+  let bToArr = b.split("");
+  if (aToArr.length === 0 || bToArr.length === 0) {
+    result = 0;
+  }
+  for (let i = 0; i < aToArr.length; i++) {
+    for (let j = 0; j < bToArr.length; j++) {
+      if (aToArr[i] + aToArr[i + 1] === bToArr[j] + bToArr[j + 1]) {
+        counter++;
+        result = counter - 1;
+        if (aToArr.length <= 2 || bToArr.length <= 2) {
+          counter = 1;
+          result = counter;
+          return result;
+        }
+      }
+    }
+  }
+  return result;
+}
+
+console.log("------------------");
+console.log(stringMatch("xxcaazz", "xxbaaz"));
+console.log(stringMatch("abc", "abc"));
+console.log(stringMatch("abc", "axc"));
+console.log(stringMatch("hello", "he"));
+console.log(stringMatch("", "hello"));
+console.log(stringMatch("aabbccdd", "abbbxxd"));
