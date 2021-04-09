@@ -740,3 +740,28 @@ console.log(arrayCount9([1, 2, 9]));
 console.log(arrayCount9([1, 9, 9]));
 console.log(arrayCount9([1, 9, 9, 3, 9]));
 console.log(arrayCount9([]));
+
+/* Given an array of ints, return true if one of the first 4 elements in the array is a 9. The array length may be less than 4.
+
+Examples
+
+arrayFront9([1,2,9,3,4]) → true
+arrayFront9([1,2,3,4,9]) → false
+arrayFront9([1,2,3,4,5]) → false */
+
+function arrayFront9(nums) {
+  let result;
+  let numsToStr = nums.join("");
+  let firstDigits = numsToStr.substring(0, 4);
+  if (firstDigits.includes("9")) {
+    result = true;
+  } else {
+    result = false;
+  }
+  return result;
+}
+
+console.log("------------------");
+console.log(arrayFront9([1, 2, 9, 3, 4]));
+console.log(arrayFront9([1, 2, 3, 4, 9]));
+console.log(arrayFront9([1, 2, 3, 4, 5]));
