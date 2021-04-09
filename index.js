@@ -577,7 +577,7 @@ console.log(countXX("Hexxo Thxxe")); */
   return result;
 }
 
-console.log("------------------");
+
 console.log(countXX1("Hexxo Thxxe"));
 console.log(countXX1("abc"));
 console.log(countXX1("xxx")); */
@@ -614,9 +614,54 @@ function countXX(str) {
 
   return counter;
 }
-
+console.log("------------------");
 console.log(countXX("abcxx"));
 console.log(countXX("xxx"));
 console.log(countXX("Hexxo Thxxe"));
 console.log(countXX("Hello There"));
 /* console.log(countXX("abc")); */
+
+// Given a string, return true if the first instance of "x" in the string is immediately followed by another "x".
+
+// Examples
+
+// doubleX('axxbb') → true
+// doubleX('axaxax') → false
+// doubleX('xxxxx') → true
+
+function doubleX(str) {
+  let num = str.indexOf("x");
+  let result;
+  if (num == -1) {
+    result = false;
+  }
+  result = str.substring(num);
+  return result.startsWith("xx");
+}
+
+console.log("------------------");
+console.log(doubleX("axxbb"));
+console.log(doubleX("axaxax"));
+console.log(doubleX("xxxxx"));
+
+// Given a string, return a new string made of every other char starting with the first, so "Hello" yields "Hlo".
+
+// Examples
+
+// stringBits('Hello') → Hlo
+// stringBits('Hi') → H
+// stringBits('Heeololeo') → Hello
+
+function stringBits(str) {
+  let result;
+  let otherChar = str.split("").filter((element, index) => {
+    return index % 2 === 0;
+  });
+  result = otherChar.join("");
+  return result;
+}
+
+console.log("------------------");
+console.log(stringBits("Hello"));
+console.log(stringBits("Hi"));
+console.log(stringBits("Heeololeo"));
