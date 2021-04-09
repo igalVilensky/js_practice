@@ -665,3 +665,17 @@ console.log("------------------");
 console.log(stringBits("Hello"));
 console.log(stringBits("Hi"));
 console.log(stringBits("Heeololeo"));
+
+/* Given a non-empty string like "Code" return a string like "CCoCodCode". */
+
+function stringSplosion(str) {
+  let result = "";
+
+  for (let i = 0; i < str.length; i++) {
+    for (let j = 0; j <= i; j++) result += str.charAt(j);
+  }
+  return result;
+}
+
+console.log("------------------");
+console.log(stringSplosion("code"));
