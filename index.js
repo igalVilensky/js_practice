@@ -807,15 +807,23 @@ function stringMatch(a, b) {
     for (let j = 0; j < bToArr.length; j++) {
       if (aToArr[i] + aToArr[i + 1] === bToArr[j] + bToArr[j + 1]) {
         counter++;
+
+        /* console.log(aToArr[i] + aToArr[i + 1]);
+        console.log("´´´´´´´´´´´´´´´´´´´´´´´´´");
+        console.log(bToArr[j] + bToArr[j + 1]); */
         result = counter - 1;
+
         if (aToArr.length <= 2 || bToArr.length <= 2) {
           counter = 1;
+
           result = counter;
+
           return result;
         }
       }
     }
   }
+
   return result;
 }
 
@@ -826,3 +834,32 @@ console.log(stringMatch("abc", "axc"));
 console.log(stringMatch("hello", "he"));
 console.log(stringMatch("", "hello"));
 console.log(stringMatch("aabbccdd", "abbbxxd"));
+console.log(stringMatch("aaxxaaxx", "iaxxai"));
+
+// Given a string, return a version where all the "x" have been removed. Except an "x" at the very start or end should not be removed.
+
+// Examples
+
+// stringX('xxHxix') → xHix
+// stringX('abxxxcd') → abcd
+// stringX('xabxxxcdx') → xabcdx
+
+function stringX(str) {
+  let result = "";
+  for (let i = 0; i < str.length; i++) {
+    let temp = str.charAt(i);
+    if (!(i > 0 && i < str.length - 1 && temp === "x")) {
+      result = result + temp;
+      if (str.length === 1 && str.charAt(0) === "x") {
+        result = temp + temp;
+      }
+    }
+  }
+  return result;
+}
+
+console.log("------------------");
+console.log(stringX("xxHxix"));
+console.log(stringX("abxxxcd"));
+console.log(stringX("xabxxxcdx"));
+console.log(stringX("x"));
