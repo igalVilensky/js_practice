@@ -863,3 +863,34 @@ console.log(stringX("xxHxix"));
 console.log(stringX("abxxxcd"));
 console.log(stringX("xabxxxcdx"));
 console.log(stringX("x"));
+
+// Given a string, return a string made of the chars at indexes 0,1, 4,5, 8,9 ... so "kittens" yields "kien".
+
+// Examples
+
+// altPairs('kitten') → kien
+// altPairs('Chocolate') → Chole
+// altPairs('CodingHorror') → Congrr
+
+function altPairs(str) {
+  let result;
+  let strToArr = str.split("");
+  let counter = 0;
+  for (let i = 0; i < str.length; i += 2) {
+    if (str[i] !== str.charAt(0)) {
+      console.log(str[i]);
+    }
+
+    counter++;
+  }
+  /*   console.log(strToArr);
+  let filtered = strToArr.filter((char) => char !== str.charAt(0));
+  result = filtered; */
+
+  return result;
+}
+
+console.log("------------------");
+/* console.log(altPairs("kitten")); */
+console.log(altPairs("Chocolate"));
+/* console.log(altPairs("CodingHorror")); */
