@@ -893,4 +893,4 @@ function altPairs(str) {
 console.log("------------------");
 /* console.log(altPairs("kitten")); */
 console.log(altPairs("Chocolate"));
-/* console.log(altPairs("CodingHorror")); */
+console.log(altPairs("CodingHorror"));
