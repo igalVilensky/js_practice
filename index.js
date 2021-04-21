@@ -957,12 +957,13 @@ console.log(findVowels("IGal"));
 // Create a program that adds up the numbers in an array (of at least 3 numbers). Bonus: Print to screen both the sum and the product of these numbers.
 
 const SumOfNumbers = (arr) => {
-  let result;
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
-  result = arr.reduce(reducer);
-  return result;
+  const reducer2 = (accumulator, currentValue) => accumulator * currentValue;
+  let result1 = arr.reduce(reducer);
+  let result2 = arr.reduce(reducer2);
+  let print = `Sum of numbers ${result1} Product of numbers ${result2}`;
+  return print;
 };
-
 console.log("------------------");
 console.log(SumOfNumbers([1, 3, 8, 6, 4, 7]));
 console.log(SumOfNumbers([1, 1, 1, 1, 1, 0]));
