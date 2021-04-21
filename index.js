@@ -930,3 +930,25 @@ console.log("------------------");
 console.log(makeAbba("Hi", "Bye"));
 console.log(makeAbba("Yo", "Alice"));
 console.log(makeAbba("What", "Up"));
+
+// AEIOU:
+// Vowels. Create a function that takes a string in its parameters and counts the number of vowels (i.e. in English, “a, e, i, o, u”) in the string.
+// i.e. findVowels(“this is a string”) ➞ 4
+
+const findVowels = (str) => {
+  let result = 0;
+  let strToArr = str.toLowerCase().split("");
+  let vowels = ["a", "e", "i", "o", "u"];
+  for (let i = 0; i < strToArr.length; i++) {
+    for (let j = 0; j < vowels.length; j++) {
+      if (strToArr[i] === vowels[j]) {
+        result += 1;
+      }
+    }
+  }
+  return result;
+};
+
+console.log("------------------");
+console.log(findVowels("this is a string"));
+console.log(findVowels("IGal"));
